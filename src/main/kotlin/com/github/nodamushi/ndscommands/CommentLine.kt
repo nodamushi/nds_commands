@@ -22,7 +22,7 @@ class CommentLine : AnAction() {
   }
 
   private fun runCommentLine2(e: AnActionEvent) {
-    val editor = e.getRequiredData(CommonDataKeys.EDITOR) ?: return
+    val editor = e.getRequiredData(CommonDataKeys.EDITOR)
     val primary = editor.caretModel.primaryCaret
     val pos = primary.offset
     ApplicationManager.getApplication().runWriteAction {
