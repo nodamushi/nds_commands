@@ -1,18 +1,23 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.nodamushi.ndscommands</id>
-    <name>nds_commands Template</name>
-    <vendor>nodamushi</vendor>
+  <id>com.github.nodamushi.ndscommands</id>
+  <name>nodamushi commands</name>
+  <vendor>nodamushi</vendor>
 
-    <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.nodamushi.ndscommands.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.nodamushi.ndscommands.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+  <actions>
+    <action class="com.github.nodamushi.ndscommands.CommentLine"
+            id="com.github.nodamushi.ndscommands.CommentLine"
+            text="Comment Line"
+            description="Comment line">
+      <keyboard-shortcut first-keystroke="control 7" keymap="$default"/>
+    </action>
+    <action class="com.github.nodamushi.ndscommands.ReformLine"
+            id="com.github.nodamushi.ndscommands.ReformLine"
+            text="Reform Line"
+            description="Reform line">
+      <keyboard-shortcut first-keystroke="control i" keymap="$default"/>
+    </action>
+  </actions>
 </idea-plugin>
