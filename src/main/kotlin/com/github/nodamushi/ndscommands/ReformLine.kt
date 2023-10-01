@@ -51,7 +51,7 @@ class ReformLine : AnAction() {
    */
   override fun actionPerformed(e: AnActionEvent) {
     val editor = e.getData(CommonDataKeys.EDITOR) ?: return
-    val project = e.getData(CommonDataKeys.PROJECT) ?: return
+    val project = e.project?: return
     val psiFile = e.getData(CommonDataKeys.PSI_FILE) ?: return
 
     ApplicationManager.getApplication().runWriteAction {
